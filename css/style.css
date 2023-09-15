@@ -127,7 +127,9 @@ nav ul li a:hover {
 
 .section1 h1,
 .section2 h1,
-.aside h1 {
+.aside h1 
+.section1-ingles h1
+{
   text-align: center;
 }
 
@@ -274,6 +276,12 @@ label {
 }
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
+
+/*  ------------CÓDIGO PARA IDIOMAS-----------*/
+.section1 img{
+  width: 10rem;
+  height: 9rem;
+}
 
 
 /*  ------------CÓDIGO breakpoints-----------*/
