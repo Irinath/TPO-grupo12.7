@@ -69,7 +69,7 @@ nav ul li a {
   text-decoration: none;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, .btn-lang:hover{
   padding: 0.2rem;
   background-color: #74c69d;
   border-radius: 5px;
@@ -84,7 +84,7 @@ nav ul li a:hover {
 
 }
 
-.button-header button {
+.button-header button, .btn-lang {
   width: 9em;
   margin-right: 0.5vw;
   font-family: Arial, sans-serif;
@@ -92,9 +92,8 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-.container-buttons-header button:hover {
+.container-buttons-header button:hover{
   background-color: #081c15;
-  ;
   color: white;
   border-radius: 5px;
 }
@@ -107,7 +106,7 @@ nav ul li a:hover {
   background-color: #52b788;
 }
 
-.section1 div a {
+.section1 div a, .link {
   text-decoration: none;
   color: #1b4332;
   background-color: #74c69d;
@@ -115,7 +114,7 @@ nav ul li a:hover {
   border: solid 1px #1b4332;
 }
 
-.section1 div a:hover {
+.section1 div a:hover, .link:hover {
   background-color: #1b4332;
   color: white;
 }
@@ -170,25 +169,31 @@ footer {
 /*  ------------CÓDIGO PARA EL FORMULARIO-----------*/
 .h1-form {
   text-align: center;
+  margin: 0;
 }
-
+.content{
+  background-color: #bdf3d5;
+}
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0.5vw;
+ 
 }
 
 .obligatorio {
-  color: red;
-  font-size: 0.9rem;
+  color:#2d6a4f;
+  font-size: 1rem;
   /* margin: 0 0.5; */
 }
 
 fieldset {
   width: 50vw;
-  /* margin-bottom: 0.9%; */
+  margin-bottom: 0.9%;
   font-size: 1.4rem;
+  background: radial-gradient(circle, #74c69d, #b7e4c7);
+ 
 }
 
 .form-field {
@@ -214,6 +219,7 @@ label {
 
 .button-form {
   border-radius: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .button-form:hover {
@@ -277,12 +283,85 @@ label {
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
 
-/*  ------------CÓDIGO PARA IDIOMAS-----------*/
-.section1 img{
+/*  ------------CÓDIGO PARA CURSOS E IDIOMAS-----------*/
+.container-lang img{
   width: 10rem;
   height: 9rem;
 }
 
+.container-lang, .container-courses {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  background-color:#1b4332 ;
+ 
+}
+
+
+.container-lang .ingles,
+.container-lang .frances,
+.container-lang .portugues,
+.container-courses .intro-prog,
+.container-courses .desarrollo,
+.container-courses .course-lang {
+  flex: 1; 
+  max-width: 33%; 
+  margin:0.2rem; 
+  text-align: center;
+  background: linear-gradient(to bottom, #74c69d,#2d6a4f);
+  color: white;
+  padding: 20px;
+  /* height: 20rem; */
+  
+}
+
+
+.container-courses .intro-prog,
+.container-courses .desarrollo,
+.container-courses .course-lang{
+  color: #081c15;
+  background-color:#52b788;
+}
+
+
+.btn-lang a{
+  text-decoration: none;
+  color: #1b4332;
+}
+
+.title{
+  text-align: center;
+  margin: 0rem;
+  padding: 1rem;
+  background: radial-gradient(circle,#74c69d,#1b4332);
+}
+
+@media (max-width: 720px) {
+  .container-lang .ingles,
+  .container-lang .frances,
+  .container-lang .portugues,
+.container-courses .intro-prog,
+.container-courses .desarrollo,
+.container-courses .course-lang {
+    max-width: 100%; 
+    
+  }
+}
+.idioma-content{
+  background-color:#52b788;
+  margin: 0;
+  
+}
+.idioma-content h2, .idioma-content h3, .idioma-content p{
+  margin: 0.2rem;
+  padding-left: 5rem;
+}
+.idioma-content  ul{ 
+    margin-left: 5rem; 
+  }
+section.idioma-content{
+  padding: 10px;
+}
 
 /*  ------------CÓDIGO breakpoints-----------*/
 
@@ -326,3 +405,6 @@ label {
 
   }
 }
+
+
+
