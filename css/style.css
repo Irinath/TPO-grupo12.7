@@ -283,6 +283,25 @@ label {
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
 
+/*  ------------CÓDIGO PARA DESARRLLO WEB ------------*/
+.section2-desarrolloweb {
+  display: flex;
+  background-color:#95d5b2;
+  flex-wrap: wrap;
+  
+}
+.imagen{
+  display: flex;
+  
+}
+ .imagen img{
+  width:100%;
+  height: auto;
+
+ }
+
+/*  ------------FIN CÓDIGO PARA DESARRLLO WEB ------------*/
+
 /*  ------------CÓDIGO PARA CURSOS E IDIOMAS-----------*/
 .container-lang img{
   width: 10rem;
