@@ -84,7 +84,7 @@ nav ul li a:hover, .btn-lang:hover{
 
 }
 
-.button-header button, .btn-lang {
+.button-header button, .btn-lang, .opiniones {
   width: 9em;
   margin-right: 0.5vw;
   font-family: Arial, sans-serif;
@@ -92,7 +92,7 @@ nav ul li a:hover, .btn-lang:hover{
   border-radius: 5px;
 }
 
-.container-buttons-header button:hover{
+.container-buttons-header button:hover, .opiniones:hover{
   background-color: #081c15;
   color: white;
   border-radius: 5px;
@@ -126,7 +126,7 @@ nav ul li a:hover, .btn-lang:hover{
 
 .section1 h1,
 .section2 h1,
-.aside h1 
+.aside h1, 
 .section1-ingles h1
 {
   text-align: center;
@@ -136,6 +136,7 @@ nav ul li a:hover, .btn-lang:hover{
   grid-area: aside;
   background-color: #2d6a4f;
   color: #b7e4c7;
+  text-align: center;
 }
 
 /*  ------------CÓDIGO PARA FOOTER-----------*/
@@ -178,7 +179,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.5vw;
+
  
 }
 
@@ -227,6 +228,8 @@ label {
   color: white;
   border-radius: 5px;
 }
+
+
 
 /*  ------------FIN CÓDIGO PARA EL FORMULARIO-----------*/
 
@@ -283,6 +286,43 @@ label {
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
 
+
+/*  ------------CÓDIGO PARA DESARRLLO WEB ------------*/
+/*  ------------CÓDIGO PARA DESARRLLO WEB ------------*/
+.section2-desarrolloweb {
+  display: flex;
+  background-color: #95d5b2; 
+  /* padding: 0.5rem;  */
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
+}
+
+.imagen img {
+  width: 17rem;
+  height: 15rem;
+}
+
+.seccion2-descripcion {
+  /* padding: 20px; */
+  text-align: center; 
+}
+
+.seccion2-descripcion h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.seccion2-descripcion h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.seccion2-desarrollo p {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center; 
+}
 /*  ------------CÓDIGO PARA CURSOS E IDIOMAS-----------*/
 .container-lang img{
   width: 10rem;
@@ -363,6 +403,56 @@ section.idioma-content{
   padding: 10px;
 }
 
+/*  ------------ CÓDIGO PARA INICIAR SESIÓN -----------*/
+.h1-form-session{
+  padding: 2rem 0;
+  text-align: center;
+  margin: 0;
+}
+
+.container-user, .container-password{
+  border: 0.15rem solid #1b4332;
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.container-password{
+  display: inline-flex;       
+  margin: 0.5rem 0.2rem;
+  
+}
+
+.icon{
+  height: 2rem;
+  cursor: pointer;
+}
+
+.container-user #usuario{
+  height: 1.5rem;
+ 
+}
+
+.form-sesion{
+  /* height: 20rem; */
+  display: flex;
+  justify-content: center;
+    height: 40vw;
+}
+
+.sign-in{
+  margin: 1rem;
+}
+
+/*------------opiniones en index --------*/
+.datos{
+  padding: 0.4rem;
+
+}
+
+.opiniones{
+  width: 12rem;
+  background-color: #52b788;
+}
 /*  ------------CÓDIGO breakpoints-----------*/
 
 @media (min-width: 720px) {
