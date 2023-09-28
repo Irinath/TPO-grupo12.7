@@ -288,17 +288,20 @@ label {
   display: flex;
   background-color:#95d5b2;
   flex-wrap: wrap;
-  
+  justify-content:center;
 }
+
 .imagen{
   display: flex;
-  
+  margin: 15px;
+  justify-items: center;
+  padding: 1%;
 }
+
  .imagen img{
   width:100%;
   height: auto;
-
- }
+}
 
 /*  ------------FIN CÓDIGO PARA DESARRLLO WEB ------------*/
 
