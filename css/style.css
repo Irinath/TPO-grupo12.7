@@ -127,6 +127,7 @@ nav ul li a:hover, .btn-lang:hover{
 .section1 h1,
 .section2 h1,
 .aside h1, 
+.intro h1,
 .section1-ingles h1
 {
   text-align: center;
@@ -332,7 +333,7 @@ label {
   height: 9rem;
 }
 
-.container-lang, .container-courses {
+.container-lang, .container-courses, .index-courses {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between;
@@ -346,7 +347,11 @@ label {
 .container-lang .portugues,
 .container-courses .intro-prog,
 .container-courses .desarrollo,
-.container-courses .course-lang {
+.container-courses .course-lang,
+.index-courses .intro,
+.index-courses .promo,
+.index-courses .testimonios
+{
   flex: 1; 
   max-width: 33%; 
   margin:0.2rem; 
@@ -473,9 +478,9 @@ section.idioma-content{
       "footer footer footer";
   }
 
-  .encabezado-centro {
+  /* .encabezado-centro {
     padding-left: 17vw;
-  }
+  } */
 
 }
 
