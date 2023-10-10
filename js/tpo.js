@@ -29,43 +29,28 @@ var frasesPersonalizadas = [
     "Gracias a lo que aprendí en este curso, pude construir un portafolio impresionante de proyectos web. Esto me ayudó a destacar entre los empleadores y conseguir trabajos freelance."
 ];
 
-var resultadoActual = -1;
-
-function mostrarSiguienteResultado() {
-    if (resultadoActual < 5) {
-        resultadoActual++;
-    }
-    mostrarResultado();
-}
 
 function mostrarResultado() {
-    if (resultadoActual >= 0 && resultadoActual < 6) {
-    
-        contenido.innerHTML = '';
+  contenido.innerHTML = ''; 
 
-        fetch('https://randomuser.me/api')
-            .then(res => res.json())
-            .then(res => {
-                console.log(res);
+  for (let i = 0; i < frasesPersonalizadas.length; i++) {
+      fetch('https://randomuser.me/api')
+          .then(res => res.json())
+          .then(res => {
+              console.log(res);
 
-               
-                let fraseAleatoria = frasesPersonalizadas[resultadoActual];
+              let fraseAleatoria = frasesPersonalizadas[i];
 
-                const elemento = document.createElement('div');
-                elemento.innerHTML = `
-                    <img src="${res.results[0].picture.large}"  >
-                    <p>- ${res.results[0].name.first}</p>
-                    <p>${fraseAleatoria}</p>
-                `;
-                contenido.appendChild(elemento);
-
-                
-                if (resultadoActual === 5) {
-                    document.querySelector('#button').disabled = true;
-                }
-            });
-    }
-}
+              const elemento = document.createElement('div');
+              elemento.innerHTML = `
+                  <img src="${res.results[0].picture.large}"  >
+                  <p>- ${res.results[0].name.first}</p>
+                  <p>${fraseAleatoria}</p>
+              `;
+              contenido.appendChild(elemento);
+          });
+  }
+  }
 
 /* CÓDIGO PARA FORMULARIO  HACER VISIBLE  PW */
 
