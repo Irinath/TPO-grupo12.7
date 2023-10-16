@@ -65,7 +65,7 @@ label {
 }
 
 .formulario__input {
-  width: 38vw;
+  width: 45vw;
   background: #fff;
   border: 3px solid transparent;
   border-radius: 3px;
@@ -151,6 +151,20 @@ label {
 /* Media query*/
 
 @media screen and (max-width: 768px) {
+  .formulario fieldset:nth-of-type(1),
+  .formulario fieldset:nth-of-type(2) {
+    margin: 0 auto; 
+    width: 80vw;
+  }
+
+  #additional{
+    width: 84vw;
+  }
+ 
+  .formulario__input{
+    width: 70vw;
+  }
+
   .formulario__validacion-estado {
     bottom: 30px;  }
   .icon {
@@ -178,7 +192,7 @@ label {
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
-  color: #1ed12d;
+  color: #034f09;
   opacity: 1;
 }
 
