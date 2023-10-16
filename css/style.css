@@ -171,52 +171,37 @@ footer {
 
 /*  ------------ CÓDIGO PARA INTRODUCCIÓN-PROG -----------*/
 
-.intro-programa {
-  display: grid;
-  grid-template-columns: auto max-content auto;
-  grid-template-rows: 10% max-content 10% 5%;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . ."
-    "menu contenido-principal testimonios"
-    "informacion-destacada informacion-destacada testimonios"
-    ". . .";
+.section2-introprograma {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
   padding: 10px;
   background-color: #95d5b2;
 }
 
-.menu {
-  grid-area: menu;
+.seccion2-detalle h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.contenido-principal {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
-  gap: 0px 0px;
-  grid-template-areas:
-    "introimg"
-    "detalle"
-    "contenido-curso";
-  grid-column: 2;
-  grid-row: 1;
+.seccion2-detalle h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.testimonio {
-  grid-column: 3;
-  grid-row: 1 / span 3;
-
+.seccion2-detalle h4 {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center; 
 }
 
-.informacion-detastacada {
-  grid-column: 1 / span 2;
-  grid-row: 3;
-}
-
-.introimg img {
+.section2-introimg img {
   border-radius: 5%;
-  max-width: 70%;
+  max-width: 90%;
   height: auto;
+  align-items: center; 
+  padding-left: 1.5rem;
 }
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
