@@ -98,7 +98,7 @@ const expresiones = {
   apellido: /^[a-zA-ZÀ-ÿ\s]{2,30}$/,
   password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*]).{8,}$/,
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-  telefono: /^\d{7,14}$/,
+  telefono: /^\d{8,14}$/,
   documento: /^\d{7,8}$/
 };
 
