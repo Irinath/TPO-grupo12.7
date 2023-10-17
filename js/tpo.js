@@ -17,71 +17,80 @@ function borrar(){
     }
   }
 
-/* código de index opiniones */
-var contenido = document.querySelector('#contenido');
+// /* código de index opiniones */
 
-var frasesPersonalizadas = [
-    "Estoy muy contento con la forma de enseñanza de este sitio. Aprendí mucho más rápido de lo que esperaba, y la plataforma es fácil de usar. ¡Altamente recomendado!",
-    "Gracias al curso de francés, finalmente logré alcanzar la fluidez que tanto deseaba. Los materiales de estudio son excelentes y los profesores son muy atentos.",
-    "La comunidad en línea de este programa es increíble. Conocí a personas de todo el mundo que comparten mi interés por aprender. Nos ayudamos mutuamente y nos alentamos constantemente.",
-    "Gracias a este curso, pude cambiar de carrera y entrar en el mundo del desarrollo web. Antes no tenía experiencia en programación, pero ahora tengo confianza en mis habilidades y estoy trabajando en proyectos reales.",
-    "Lo que más me gusta de estos cursos es que ofrecen una amplia variedad de temas, desde diseño web hasta programación backend. He estado tomando cursos aquí durante años y sigo aprendiendo y mejorando.",
-    "Gracias a lo que aprendí en este curso, pude construir un portafolio impresionante de proyectos web. Esto me ayudó a destacar entre los empleadores y conseguir trabajos freelance."
-];
+// var contenido = document.querySelector('#contenido');
+//         var frasesPersonalizadas = [
+//             "Estoy muy contento con la forma de enseñanza de este sitio. Aprendí mucho más rápido de lo que esperaba, y la plataforma es fácil de usar. ¡Altamente recomendado!",
+//             "Gracias al curso de francés, finalmente logré alcanzar la fluidez que tanto deseaba. Los materiales de estudio son excelentes y los profesores son muy atentos.",
+//             "La comunidad en línea de este programa es increíble. Conocí a personas de todo el mundo que comparten mi interés por aprender. Nos ayudamos mutuamente y nos alentamos constantemente.",
+//             "Gracias a este curso, pude cambiar de carrera y entrar en el mundo del desarrollo web. Antes no tenía experiencia en programación, pero ahora tengo confianza en mis habilidades y estoy trabajando en proyectos reales.",
+//             "Lo que más me gusta de estos cursos es que ofrecen una amplia variedad de temas, desde diseño web hasta programación backend. He estado tomando cursos aquí durante años y sigo aprendiendo y mejorando.",
+//             "Gracias a lo que aprendí en este curso, pude construir un portafolio impresionante de proyectos web. Esto me ayudó a destacar entre los empleadores y conseguir trabajos freelance."
+//         ];
 
+//         var resultadoActual = 0;
 
-function mostrarResultado() {
-  contenido.innerHTML = ''; 
+//         function mostrarResultado() {
+//             contenido.innerHTML = '';
+//             fetch('https://randomuser.me/api')
+//                 .then(res => res.json())
+//                 .then(res => {
+//                     console.log(res);
+//                     let fraseAleatoria = frasesPersonalizadas[resultadoActual];
+//                     const elemento = document.createElement('div');
+//                     elemento.innerHTML = `
+//                         <img src="${res.results[0].picture.large}"  >
+//                         <p>- ${res.results[0].name.first}</p>
+//                         <p>${fraseAleatoria}</p>
+//                     `;
+//                     contenido.appendChild(elemento);
+//                     resultadoActual = (resultadoActual + 1) % frasesPersonalizadas.length;
 
-  for (let i = 0; i < frasesPersonalizadas.length; i++) {
-      fetch('https://randomuser.me/api')
-          .then(res => res.json())
-          .then(res => {
-              console.log(res);
+                  
+//                     if (resultadoActual === 0) {
+//                         document.getElementById('button').textContent = 'Mostrar Testimonio';
+//                     } else {
+//                         document.getElementById('button').textContent = 'Siguiente Testimonio';
+//                     }
+//                 });
+//         }
 
-              let fraseAleatoria = frasesPersonalizadas[i];
+//         document.querySelector('#button').addEventListener('click', mostrarResultado);
+ 
 
-              const elemento = document.createElement('div');
-              elemento.innerHTML = `
-                  <img src="${res.results[0].picture.large}"  >
-                  <p>- ${res.results[0].name.first}</p>
-                  <p>${fraseAleatoria}</p>
-              `;
-              contenido.appendChild(elemento);
-          });
-  }
-  }
 
 /* CÓDIGO PARA FORMULARIO  HACER VISIBLE  PW */
 
-let flag2 = true;
 
-function pass(passwordFieldId, iconId) {
-    const passwordField = document.querySelector(`#${passwordFieldId}`);
-    const passIcon = document.querySelector(`#${iconId}`);
+// let flag2 = true;
 
-    if (flag2) {
-        passwordField.type = "text";
-        passIcon.src = "/imagenes/eye-transp.png";
-		passIcon.style.width = "20px"; 
-        flag2 = false;
-    } else {
-        passwordField.type = "password";
-        passIcon.src = "/imagenes/eye-slash-transp.png";
-		passIcon.style.width = "29px"; 
-        flag2 = true;
-    }
-}
+// function pass(passwordFieldId, iconId) {
+//     const passwordField = document.querySelector(`#${passwordFieldId}`);
+//     const passIcon = document.querySelector(`#${iconId}`);
 
-//  para contraseña 1 y su icono
-document.querySelector("#pass-icon").addEventListener("click", function() {
-    pass("password", "pass-icon");
-});
+//     if (flag2) {
+//         passwordField.type = "text";
+//         passIcon.src = "/imagenes/eye-transp.png";
+// 		passIcon.style.width = "20px"; 
+//         flag2 = false;
+//     } else {
+//         passwordField.type = "password";
+//         passIcon.src = "/imagenes/eye-slash-transp.png";
+// 		passIcon.style.width = "29px"; 
+//         flag2 = true;
+//     }
+// }
 
-//  para contraseña 2 y su icono
-document.querySelector("#pass-icon2").addEventListener("click", function() {
-    pass("password2", "pass-icon2");
-});
+// //  para contraseña 1 y su icono
+// document.querySelector("#pass-icon").addEventListener("click", function() {
+//     pass("password", "pass-icon");
+// });
+
+// //  para contraseña 2 y su icono
+// document.querySelector("#pass-icon2").addEventListener("click", function() {
+//     pass("password2", "pass-icon2");
+// });
 
 
 
