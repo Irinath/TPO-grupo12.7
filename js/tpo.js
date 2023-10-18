@@ -63,34 +63,34 @@ function borrar(){
 /* CÓDIGO PARA FORMULARIO  HACER VISIBLE  PW */
 
 
-// let flag2 = true;
+let flag2 = true;
 
-// function pass(passwordFieldId, iconId) {
-//     const passwordField = document.querySelector(`#${passwordFieldId}`);
-//     const passIcon = document.querySelector(`#${iconId}`);
+function pass(passwordFieldId, iconId) {
+    const passwordField = document.querySelector(`#${passwordFieldId}`);
+    const passIcon = document.querySelector(`#${iconId}`);
 
-//     if (flag2) {
-//         passwordField.type = "text";
-//         passIcon.src = "/imagenes/eye-transp.png";
-// 		passIcon.style.width = "20px"; 
-//         flag2 = false;
-//     } else {
-//         passwordField.type = "password";
-//         passIcon.src = "/imagenes/eye-slash-transp.png";
-// 		passIcon.style.width = "29px"; 
-//         flag2 = true;
-//     }
-// }
+    if (flag2) {
+        passwordField.type = "text";
+        passIcon.src = "/imagenes/eye-transp.png";
+		passIcon.style.width = "20px"; 
+        flag2 = false;
+    } else {
+        passwordField.type = "password";
+        passIcon.src = "/imagenes/eye-slash-transp.png";
+		passIcon.style.width = "29px"; 
+        flag2 = true;
+    }
+}
 
-// //  para contraseña 1 y su icono
-// document.querySelector("#pass-icon").addEventListener("click", function() {
-//     pass("password", "pass-icon");
-// });
+//  para contraseña 1 y su icono
+document.querySelector("#pass-icon").addEventListener("click", function() {
+    pass("password", "pass-icon");
+});
 
-// //  para contraseña 2 y su icono
-// document.querySelector("#pass-icon2").addEventListener("click", function() {
-//     pass("password2", "pass-icon2");
-// });
+//  para contraseña 2 y su icono
+document.querySelector("#pass-icon2").addEventListener("click", function() {
+    pass("password2", "pass-icon2");
+});
 
 
 
@@ -173,22 +173,23 @@ const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
 	const inputPassword2 = document.getElementById('password2');
 
-	if(inputPassword1.value !== inputPassword2.value){
+	if (inputPassword1.value !== inputPassword2.value) {
 		document.getElementById(`contrasena2`).classList.add('formulario__grupo-incorrecto');
-	document.getElementById(`contrasena2`).classList.remove('formulario__grupo-correcto');
-	document.querySelector(`#contrasena2 i`).classList.add('fa-times-circle');
-	document.querySelector(`#contrasena2 i`).classList.remove('fa-check-circle');
-	document.querySelector(`#contrasena2  .formulario__input-error`).classList.add('formulario__input-error-activo');
-		campos['contrasena'] = false;
+		document.getElementById(`contrasena2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#contrasena2 i`).classList.add('fa-times-circle');
+		document.querySelector(`#contrasena2 i`).classList.remove('fa-check-circle');
+		document.querySelector(`#contrasena2  .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['contrasena2'] = false;
 	} else {
-    document.getElementById(`contrasena2`).classList.remove('formulario__grupo-incorrecto');
-    document.getElementById(`contrasena2`).classList.add('formulario__grupo-correcto');
-    document.querySelector(`#contrasena2 i`).classList.remove('fa-times-circle');
-    document.querySelector(`#contrasena2 i`).classList.add('fa-check-circle');
-    document.querySelector(`#contrasena2  .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		campos['contrasena'] = true;
+		document.getElementById(`contrasena2`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`contrasena2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#contrasena2 i`).classList.remove('fa-times-circle');
+		document.querySelector(`#contrasena2 i`).classList.add('fa-check-circle');
+		document.querySelector(`#contrasena2  .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['contrasena2'] = true;
 	}
 }
+
 
 
 inputs.forEach((input) => {

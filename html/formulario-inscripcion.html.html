@@ -30,13 +30,14 @@
           <a class="button-header" href="/html/inicio-sesion.html">
             <button>Iniciar sesión</button>
           </a>
-
+<!-- 
           <a
             class="button-header"
             href="/html/formulario-inscripcion.html.html"
-          >
+          > -->
+          <a class="button-header" href="https://formsubmit.co/silviagrace15@gmail.com">
             <button>Registrarse</button>
-          </a>
+          </a> 
         </div>
       </header>
 
@@ -52,7 +53,7 @@
       <h1 class="h1-form">Completa el siguiente formulario</h1>
 
       <div class="form-container">
-        <form id="formulario"  class="formulario" action="https://formsubmit.co/silviagrace15@gmail.com" method="post">
+        <form id="formulario"  class="formulario" action="https://formsubmit.co/silviagrace15@gmail.com" method="POST">
 
           <fieldset>
             <legend>Datos Personales</legend>
@@ -145,6 +146,7 @@
   <label for="password" class="formulario__label">Contraseña</label>
   <span class="required">*</span>
   <div class="formulario__grupo-input">
+    <img src="/imagenes/eye-slash-transp.png" id="pass-icon" class="icon " onclick="pass('password')">
       <input
           class="formulario__input"
           type="password"
@@ -155,7 +157,7 @@
           required
       />
       <i class="formulario__validacion-estado fas fa-times-circle icon-password "></i>
-      <!-- <img src="/imagenes/eye-slash-transp.png" id="pass-icon" class="icon " onclick="pass('password')"> -->
+     
   </div>
   <p class="formulario__input-error">La contraseña debe tener al menos 8 caracteres que incluyan al menos 1 carácter en minúscula, 1 carácter en mayúscula, 1 número y 1 carácter especial en (!@#$%^&*)</p>
 </div>
@@ -166,6 +168,7 @@
   <label for="password2" class="formulario__label">Repetir contraseña</label>
   <span class="required">*</span>
   <div class="formulario__grupo-input">
+    <img src="/imagenes/eye-slash-transp.png" id="pass-icon2" class="icon" onclick="pass2()">
       <input
           class="formulario__input"
           type="password"
@@ -176,7 +179,7 @@
           required
       />
       <i class="formulario__validacion-estado fas fa-times-circle icon-password "></i>
-      <!-- <img src="/imagenes/eye-slash-transp.png" id="pass-icon2" class="icon" onclick="pass2()"> -->
+    
   </div>
   <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
 </div>

@@ -73,9 +73,9 @@ label {
   transition: 0.3s ease all;
 }
 
- /* #password2, #password{
-  width: 36.2vw;
-} */
+ #password2, #password{
+  width: 42vw;
+}
 
 .formulario__grupo-input {
   position: relative;
