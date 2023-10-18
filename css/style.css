@@ -180,20 +180,21 @@ footer {
   background-color: #95d5b2;
 }
 
-.seccion2-detalle h1 {
+.section2-detalle h1 {
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.seccion2-detalle h2 {
-  font-size: 14px;
+.section2-detalle h2 {
+  font-size: 18px;
   margin-bottom: 10px;
+  text-align: center
 }
 
-.seccion2-detalle h4 {
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: center; 
+.section2-detalle h4 {
+  line-height: 1.0;
+  margin-left: 5%; 
 }
 
 .section2-introimg img {
@@ -203,6 +204,18 @@ footer {
   align-items: center; 
   padding-left: 1.5rem;
 }
+
+.informacion-destacada a, .link{
+  text-decoration: none;
+  color: #b7e4c7;
+
+}
+.informacion-destacada a:hover, .link:hover{
+  background-color: #1b4332;
+  color: white;
+  padding: 2px;
+}
+
 
 /*  ------------FIN CÓDIGO PARA INTRODUCCIÓN-PROG ------------*/
 
@@ -218,7 +231,7 @@ footer {
   flex-direction: column; 
 }
 
-.imagen img {
+.imagenweb img {
   width: 17rem;
   height: 15rem;
 }
