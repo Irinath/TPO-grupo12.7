@@ -428,6 +428,11 @@ section.idioma-content{
     flex-direction: column;
     gap: 5px;
   }
+
+  .opiniones, #contenido {
+    margin-bottom: 20px; 
+}
+
 }
 
 
