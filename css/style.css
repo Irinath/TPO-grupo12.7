@@ -84,7 +84,7 @@ nav ul li a:hover, .btn-lang:hover{
 
 }
 
-.button-header button, .btn-lang, .opiniones {
+.button-header button, .btn-lang, .opiniones, .button-st {
   width: 9em;
   margin-right: 0.5vw;
   font-family: Arial, sans-serif;
@@ -92,7 +92,7 @@ nav ul li a:hover, .btn-lang:hover{
   border-radius: 5px;
 }
 
-.container-buttons-header button:hover, .opiniones:hover{
+.container-buttons-header button:hover, .opiniones:hover, .button-st:hover{
   background-color: #081c15;
   color: white;
   border-radius: 5px;
@@ -391,6 +391,12 @@ section.idioma-content{
   width: 12rem;
   background-color: #52b788;
 }
+/*  ------------CÓDIGO formularios inscripciones-----------*/
+.button-st{
+  background-color: #52b788;
+}
+
+
 /*  ------------CÓDIGO breakpoints-----------*/
 
 @media (min-width: 720px) {
