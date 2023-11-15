@@ -147,6 +147,16 @@ label {
   margin-left: 10px; 
 }
 
+/*Formulario alumnos*/
+
+#cursoProgramacion,
+#cursoIdiomas {
+  margin: 15px; 
+  padding: 4px; 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 
 /* Media query*/
 

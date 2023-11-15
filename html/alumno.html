@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción a cursos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@1,300&family=Princess+Sofia&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/css/formulario.css">
+  </head>
+  <body>
+    <div class="container-form">
+     <header class="header-container">
+        <div class="logo-header">
+          <img src="/imagenes/logo2.jpg" alt="Logo" />
+        </div>
+
+        <div class="encabezado-centro">
+          <h1 class=" animate__animated  animate__backInRight">Free Academy</h1>
+        </div>
+
+        <div class="container-buttons-header">
+          <a class="button-header" href="/html/inicio-sesion.html">
+            <button>Iniciar sesión</button>
+          </a>
+<!-- 
+          <a
+            class="button-header"
+            href="/html/formulario-inscripcion.html.html"
+          > -->
+          <a class="button-header" href="https://formsubmit.co/silviagrace15@gmail.com">
+            <button>Registrarse</button>
+          </a> 
+        </div>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/cursos.html">Cursos</a></li>
+          
+        </ul>
+      </nav>
+
+    <main class="content">
+      <h1 class="h1-form">Inscripción a los cursos</h1>
+
+      <div class="form-container">
+        <form id="formulario"  class="formulario" action="https://formsubmit.co/silviagrace15@gmail.com" method="POST">
+
+          <fieldset>
+            <legend>Datos Personales</legend>
+            <!--  Nombre -->
+            <div class="form-field" id="nombre">
+              <label for="firstname" class="formulario__label">Nombre:</label>
+              <div class="formulario__grupo-input">
+              <input
+                class="formulario__input"
+                type="text"
+                name="Firstname"
+                id="firstname"
+                placeholder="Ingrese su nombre aquí..."
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+              <p class="formulario__input-error">El nombre puede incluir letras, espacios y tildes. Tiene que ser de 3 a 30 dígitos.</p>
+            </div>
+            
+
+            <!--  Apellido -->
+            <div class="form-field" id="apellido">
+              <label for="surname" class="formulario__label">Apellido:</label>
+              <div class="formulario__grupo-input">
+              <input class="formulario__input" type="text" name="Surname" id="surname" placeholder="Ingrese su apellido aquí..." required/>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i> 
+            </div>
+              <p class="formulario__input-error">El apellido puede incluir letras, espacios y  tildes. Tiene que ser de 2 a 30 dígitos. </p>
+            </div>
+
+            <div class="form-field" id="correo">
+              <label for="email" class="formulario__label">Dirección de correo:</label>
+              <div class="formulario__grupo-input">
+              <input
+              class="formulario__input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="ejemplo@gmail.com"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
+              <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guión bajo. Debe incluir el símbolo "@"</p>
+            </div>
+
+            <!--  DNI -->
+            <div class="form-field" >
+              <label for="identity-card" class="formulario__label">Tipo de documento</label>
+              
+              <select id="identity-card" name="identity-card" required>
+                <option value="DNI">DNI</option>
+                <option value="LC">Libreta Cívica</option>
+                <option value="L-enrolamiento">Libreta de enrolamiento</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="documento">
+              <label for="ID-number" class="formulario__label">Número:</label>
+              <div class="formulario__grupo-input">
+              <input
+              class="formulario__input"
+                type="number"
+                name="ID-number"
+                id="ID-number"
+                placeholder="Ejemplo 23466488"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
+              <p class="formulario__input-error">El documento solo puede contener números y el máximo son 8 dígitos.</p>
+            </div>
+
+            <!--  Usuario -->
+            <div class="form-field" id="usuario">
+              <label for="username" class="formulario__label">Usuario: </label>
+              <div class="formulario__grupo-input">
+              <input
+              class="formulario__input"
+                type="text"
+                name="username"
+                id="username"
+                autocomplete="off"
+                placeholder="Escribe tu usuario"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle "></i></div>
+              <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guión bajo.</p>
+            </div>
+
+           <!-- Contraseña 1 -->
+<div class="form-field" id="contrasena">
+  <label for="password" class="formulario__label">Contraseña</label>
+  <div class="formulario__grupo-input">
+    <img src="/imagenes/eye-slash-transp.png" id="pass-icon" class="icon " onclick="pass('password')">
+      <input
+          class="formulario__input"
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="off"
+          placeholder="Ingrese una contraseña"
+          required
+      />
+      <i class="formulario__validacion-estado fas fa-times-circle icon-password "></i>
+     
+  </div>
+  <p class="formulario__input-error">La contraseña debe tener al menos 8 caracteres que incluyan al menos 1 carácter en minúscula, 1 carácter en mayúscula, 1 número y 1 carácter especial en (!@#$%^&*)</p>
+</div>
+
+
+<!-- Contraseña 2 -->
+<div class="form-field" id="contrasena2">
+  <label for="password2" class="formulario__label">Repetir contraseña</label>
+  <div class="formulario__grupo-input">
+    <img src="/imagenes/eye-slash-transp.png" id="pass-icon2" class="icon" onclick="pass2()">
+      <input
+          class="formulario__input"
+          type="password"
+          name="password2"
+          id="password2"
+          autocomplete="off"
+          placeholder="Repetir contraseña"
+          required
+      />
+      <i class="formulario__validacion-estado fas fa-times-circle icon-password "></i>
+    
+  </div>
+  <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+</div>
+</fieldset>
+
+ <!--  Estado del alumno NO LO DEFINE EL ALUMNO -->
+<!-- <div class="form-group mt-2">
+  <label for="activo">Activo:</label>
+  <select class="form-control" id="activo">
+    <option value="1">Sí</option>
+    <option value="0">No</option>
+  </select>
+</div> -->
+
+ <!--  Selección de cursos -->
+ <fieldset>
+  <legend>Selección de Cursos</legend>
+  <fieldset>
+    <legend>Selección de Cursos</legend>
+    <div class="form-group mt-2">
+      <label for="cursoProgramacion">Cursos Programación:</label>
+      <select class="form-control" id="cursoProgramacion" name="cursoProgramacion" >
+        <option value="">Seleccione un curso de programación</option>
+        <option value="Intro-prog">Intro a Programación</option>
+        <option value="desarrollo-Web">Desarrollo Web</option>
+        <option value="PHP">PHP</option>
+        <option value="java">Java</option>
+        <option value="mysql">MySql</option>
+        <option value="python">Python</option>
+        <option value="no">Ninguno</option>
+      </select>
+    </div>
+
+    <div class="form-group mt-2">
+      <label for="cursoIdiomas">Cursos Idiomas (Se realizará una prueba de nivelación):</label>
+      <select class="form-control" id="cursoIdiomas" name="cursoIdiomas" >
+        <option value="">Seleccione un curso de idiomas</option>
+        <option value="ingles">Inglés</option>
+        <option value="frances">Francés</option>
+        <option value="portugues">Portugués</option>
+        <option value="ninguno">Ninguno</option>
+      </select>
+    </div>
+  </fieldset>
+</fieldset>
+
+          <!--  Terminos y Condiciones -->
+          <div class="form-field" id="grupo__terminos">
+            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+            <label for="terminos" class="formulario__label"
+              >Acepto los Terminos y Condiciones</label
+            >
+            
+          </div>
+          <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario correctamente. </p>
+        </div>
+
+        <div class="form-field formulario__grupo-btn-enviar button-form">
+          <button  type="submit" class="formulario__btn" style="cursor: pointer">
+            Inscibirse
+          </button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+          <!-- <button class="button-form" type="reset" style="cursor: pointer">
+            Borrar
+          </button> -->
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div><p> &copy;2023 Free Academy</p></div>
+
+      <div class="footer-icons">
+        <a  href="https://twitter.com/" target="_blank" >
+           <span class="fab fa-twitter" title="Ir a twitter"></span></a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <span class="fab fa-facebook" title="Ir a Facebook"></span></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><span class="fab fa-instagram" title="Ir a Instagram"></span
+        ></a>
+        <a href="https://www.pinterest.com/" target="_blank" 
+          ><span class="fab fa-pinterest" title="Ir a Pinterest"></span
+        ></a>
+       
+      </div>
+    </footer>
+    <div>
+<!-- <script src="/js/tpo.js"></script> -->
+<script src="/js/alumnosForm.js"></script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>
