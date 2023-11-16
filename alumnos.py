@@ -83,18 +83,17 @@ class Alumno:
     # Modificar alumno
     # -------------------------------------------------------------------
     def modificar_alumno(self, id, nuevo_nombres, nuevo_apellidos, nuevo_mail, nuevo_idcurso, nuevo_tipo_documento=None, nuevo_nro_documento=None, nuevo_usuario=None, nueva_contrasenia=None, nuevo_activo=None):
-        self.c.execute(f"""
-            UPDATE alumno
-                SET nombres = '{nuevo_nombres}', apellidos = '{nuevo_apellidos}', mail = '{nuevo_mail}',\
-                        idcurso = '{nuevo_idcurso}', tipodocumento = '{nuevo_tipo_documento}', \
-                        nrodocumento = '{nuevo_nro_documento}', usuario = '{nuevo_usuario}', \
-                        contrasenia = '{nueva_contrasenia}, activo = '{nuevo_activo}'
-                WHERE idalumno = '{id}'
-            """)
+     self.c.execute(f"""
+        UPDATE alumno
+        SET nombres = '{nuevo_nombres}', apellidos = '{nuevo_apellidos}', mail = '{nuevo_mail}',\
+            idcurso = '{nuevo_idcurso}', tipodocumento = '{nuevo_tipo_documento}', \
+            nrodocumento = '{nuevo_nro_documento}', usuario = '{nuevo_usuario}', \
+            contrasenia = '{nueva_contrasenia}', activo = '{nuevo_activo}'
+        WHERE idalumno = '{id}'
+    """)
 
-        self.conn.commit()
-        return self.c.rowcount > 0
-
+     self.conn.commit()
+     return self.c.rowcount > 0
 
 
 # ------------------------------------------------------------------
@@ -154,13 +153,13 @@ class Alumno:
         
 alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
 # 
-alumno.agregar_alumno(6, "Jan", "Brown", "jan@gmail.com", 1, "DNI", 25678898, "janbro", "1234",1)
+# alumno.agregar_alumno(1, "Jane", "Porez", "jane@gmail.com", 1, "DNI", 33678898, "janep", "7234",1)
 
-# alumno.mostrar_alumno(1)
+alumno.mostrar_alumno(1)
 
-# alumno.modificar_alumno(4,"Pam", "Pez", "panmpez@gmail.com", "none", 1)
+# alumno.modificar_alumno(2,"Pedro", "Ortiz", "pedror@gmail.com", 1, "DNI", 18564777, "pedrito", "9955")
 
-# alumno.eliminar_alumno(4)
+# alumno.eliminar_alumno(1)
 # alumno.consultar_alumno(4)
 
 
