@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alta de alumno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@1,300&family=Princess+Sofia&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/css/formulario.css">
+  </head>
+  <body>
+    <div class="container-form">
+     <header class="header-container">
+        <div class="logo-header">
+          <img src="/imagenes/logo2.jpg" alt="Logo" />
+        </div>
+
+        <div class="encabezado-centro">
+          <h1 class=" animate__animated  animate__backInRight">Free Academy</h1>
+        </div>
+
+        <div class="container-buttons-header">
+          <a class="button-header" href="/html/inicio-sesion.html">
+            <button>Iniciar sesión</button>
+          </a>
+<!-- 
+          <a
+            class="button-header"
+            href="/html/formulario-inscripcion.html.html"
+          > -->
+          <!-- <a class="button-header" href="https://formsubmit.co/silviagrace15@gmail.com"> -->
+            <button>Registrarse</button>
+          </a> 
+        </div>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/cursos.html">Cursos</a></li>
+          
+        </ul>
+      </nav>
+
+    <main class="content">
+      <h1 class="h1-form">Alta alumnos</h1>
+
+      <div class="form-container">
+       
+        <!-- <form id="formulario"  class="formulario" action="https://formsubmit.co/silviagrace15@gmail.com" method="POST"> -->
+        <form id="formulario"  class="formulario" enctype="multipart/form-data"
+         > 
+
+          <fieldset>
+            <legend>Datos </legend>
+            <!--  Nombre -->
+            <div class="form-field" id="nombre">
+              <label for="firstname" class="formulario__label">Nombre:</label>
+              <div class="formulario__grupo-input">
+              <input
+                class="formulario__input"
+                type="text"
+                name="Firstname"
+                id="firstname"
+                placeholder="Ingrese su nombre aquí..."
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+              <p class="formulario__input-error">El nombre puede incluir letras, espacios y tildes. Tiene que ser de 3 a 30 dígitos.</p>
+            </div>
+            
+
+            <!--  Apellido -->
+            <div class="form-field" id="apellido">
+              <label for="surname" class="formulario__label">Apellido:</label>
+              <div class="formulario__grupo-input">
+              <input class="formulario__input" type="text" name="Surname" id="surname" placeholder="Ingrese su apellido aquí..." required/>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i> 
+            </div>
+              <p class="formulario__input-error">El apellido puede incluir letras, espacios y  tildes. Tiene que ser de 2 a 30 dígitos. </p>
+            </div>
+
+            <div class="form-field" id="correo">
+              <label for="email" class="formulario__label">Dirección de correo:</label>
+              <div class="formulario__grupo-input">
+              <input
+              class="formulario__input"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="ejemplo@gmail.com"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
+              <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guión bajo. Debe incluir el símbolo "@"</p>
+            </div>
+
+            <!--  DNI -->
+            <div class="form-field" >
+              <label for="identity-card" class="formulario__label">Tipo de documento</label>
+              
+              <select id="identity-card" name="identity-card" required>
+                <option value="DNI">DNI</option>
+                <option value="LC">Libreta Cívica</option>
+                <option value="L-enrolamiento">Libreta de enrolamiento</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="documento">
+              <label for="ID-number" class="formulario__label">Número:</label>
+              <div class="formulario__grupo-input">
+              <input
+              class="formulario__input"
+                type="number"
+                name="ID-number"
+                id="ID-number"
+                placeholder="Ejemplo 23466488"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
+              <p class="formulario__input-error">El documento solo puede contener números y el máximo son 8 dígitos.</p>
+            </div>
+            <div class="form-field" id="telefono">
+              <label for="phone-number" class="formulario__label">Teléfono de contacto:</label>
+              <div class="formulario__grupo-input">
+              <input
+               class="formulario__input"
+                type="text"
+                name="phone-number"
+               
+                placeholder="Ejemplo: 1112345678"
+                required
+              />
+              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
+              <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14 dígitos.</p>
+            </div>
+            
+      <!--  Estado del alumno  -->
+      <div class="form-group mt-2">
+        <label for="activo">Activo:</label>
+        <select class="form-control" id="activo">
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+
+</fieldset>
+
+
+
+          <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario correctamente. </p>
+        </div>
+
+        <div class="form-field formulario__grupo-btn-enviar button-form">
+          <button  type="submit" class="formulario__btn" style="cursor: pointer">
+            Enviar
+          </button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+          <!-- <button class="button-form" type="reset" style="cursor: pointer">
+            Borrar
+          </button> -->
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div><p> &copy;2023 Free Academy</p></div>
+
+      <div class="footer-icons">
+        <a  href="https://twitter.com/" target="_blank" >
+           <span class="fab fa-twitter" title="Ir a twitter"></span></a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <span class="fab fa-facebook" title="Ir a Facebook"></span></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><span class="fab fa-instagram" title="Ir a Instagram"></span
+        ></a>
+        <a href="https://www.pinterest.com/" target="_blank" 
+          ><span class="fab fa-pinterest" title="Ir a Pinterest"></span
+        ></a>
+       
+      </div>
+    </footer>
+    <div>
+<!-- <script src="/js/tpo.js"></script> -->
+<script src="/js/alumnosForm.js"></script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="/js/inscripcion.js"></script>
+
+  </body>
+</html>

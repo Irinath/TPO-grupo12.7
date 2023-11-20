@@ -330,8 +330,8 @@ section.idioma-content{
   padding: 10px;
 }
 
-/*  ------------ CÓDIGO PARA INICIAR SESIÓN -----------*/
-.h1-form-session{
+/*  ------------ CÓDIGO PARA INICIAR SESIÓN, ADMINISTRACIÓN -----------*/
+.h1-form-session, .h1_administracion{
   padding: 2rem 0;
   text-align: center;
   margin: 0;
@@ -348,6 +348,7 @@ section.idioma-content{
   padding: 0.4rem;
   /* width: 35vw; */
 }
+
 
 .inicio_input1{
   width: 50%;
@@ -379,6 +380,22 @@ section.idioma-content{
 
 .sign-in{
   margin: 1rem;
+}
+
+.container-admin{
+  border: 0.15rem solid #1b4332;
+  border-radius: 10px;
+  padding: 0.4rem;
+  width: 35vw; 
+  text-align: center;
+  margin-bottom: 2%;
+  
+}
+
+.container-admin a{
+  text-decoration: none;
+  color: #000;
+  font-size: x-large;
 }
 
 /*------------opiniones en index --------*/

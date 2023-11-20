@@ -1,5 +1,6 @@
 import mysql.connector
 
+
 class Alumno:
     def __init__(self, host, user, password, database):
           self.conn = mysql.connector.connect( #conn es el nombre de la variable que almacena la conexion puede llamarse de cualquier forma no es necesario conn
@@ -24,6 +25,7 @@ class Alumno:
                 FOREIGN KEY (idcurso) REFERENCES curso (idcurso)
                
             )
+         
         """)
           self.conn.commit()
          
@@ -103,7 +105,7 @@ class Alumno:
      self.c.execute("""
         SELECT alumno.*, curso.nombre_curso as nombre_curso
         FROM alumno
-        LEFT JOIN cursos as curso ON alumno.idcurso = curso.idcurso
+        LEFT JOIN curso as curso ON alumno.idcurso = curso.idcurso
     """)
      students = self.c.fetchall()
      print("-" * 50)
@@ -131,8 +133,8 @@ class Alumno:
 # ------------------------------------------------------------------
 #   Funcion que muestra un alumno
 # -------------------------------------------------------------------
-    def mostrar_alumno(self, cod):
-     student = self.consultar_alumno(cod)
+    def mostrar_alumno(self, idalumno):
+     student = self.consultar_alumno(idalumno)
 
      if student:
         print("-" * 30)
@@ -150,17 +152,19 @@ class Alumno:
      else:
         print("Alumno no encontrado")
 
-        
-alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
-# 
-# alumno.agregar_alumno(1, "Jane", "Porez", "jane@gmail.com", 1, "DNI", 33678898, "janep", "7234",1)
 
-alumno.mostrar_alumno(1)
+
+alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
+#-------------------------------------------------------------------- 
+#alumno.agregar_alumno(7, "Jan", "Porez", "jane@gmail.com", 1, "DNI", 33678898, "janep", "7234",1)
+
+#alumno.mostrar_alumno(1)
 
 # alumno.modificar_alumno(2,"Pedro", "Ortiz", "pedror@gmail.com", 1, "DNI", 18564777, "pedrito", "9955")
 
-# alumno.eliminar_alumno(1)
+#alumno.eliminar_alumno(7)
 # alumno.consultar_alumno(4)
+#alumno.listar_alumno()
 
 
 
