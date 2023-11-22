@@ -371,7 +371,7 @@ section.idioma-content{
  
 }
 
-.form-sesion{
+.form-sesion, .form-modif{
   /* height: 20rem; */
   display: flex;
   justify-content: center;

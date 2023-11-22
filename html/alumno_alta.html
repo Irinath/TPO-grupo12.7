@@ -61,14 +61,14 @@
           <fieldset>
             <legend>Datos </legend>
             <!--  Nombre -->
-            <div class="form-field" id="nombre">
-              <label for="firstname" class="formulario__label">Nombre:</label>
+            <div class="form-field" >
+              <label for="nombres" class="formulario__label">Nombre:</label>
               <div class="formulario__grupo-input">
               <input
                 class="formulario__input"
                 type="text"
-                name="Firstname"
-                id="firstname"
+                name="nombres"
+                id="nombres"
                 placeholder="Ingrese su nombre aquí..."
                 required
               />
@@ -79,25 +79,26 @@
             
 
             <!--  Apellido -->
-            <div class="form-field" id="apellido">
-              <label for="surname" class="formulario__label">Apellido:</label>
+            <div class="form-field" >
+              <label for="apellidos" class="formulario__label">Apellido:</label>
               <div class="formulario__grupo-input">
-              <input class="formulario__input" type="text" name="Surname" id="surname" placeholder="Ingrese su apellido aquí..." required/>
+              <input class="formulario__input" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su apellido aquí..." required/>
               <i class="formulario__validacion-estado fas fa-times-circle"></i> 
             </div>
               <p class="formulario__input-error">El apellido puede incluir letras, espacios y  tildes. Tiene que ser de 2 a 30 dígitos. </p>
             </div>
 
-            <div class="form-field" id="correo">
-              <label for="email" class="formulario__label">Dirección de correo:</label>
+            <div class="form-field" >
+              <label for="mail" class="formulario__label">Dirección de correo:</label>
               <div class="formulario__grupo-input">
               <input
               class="formulario__input"
                 type="email"
-                name="email"
-                id="email"
+                name="mail"
+                id="mail"
                 placeholder="ejemplo@gmail.com"
                 required
+                autocomplete="email"
               />
               <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
               <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guión bajo. Debe incluir el símbolo "@"</p>
@@ -105,9 +106,9 @@
 
             <!--  DNI -->
             <div class="form-field" >
-              <label for="identity-card" class="formulario__label">Tipo de documento</label>
+              <label for="tipodocumento" class="formulario__label">Tipo de documento</label>
               
-              <select id="identity-card" name="identity-card" required>
+              <select id="tipodocumento" name="tipodocumento" required>
                 <option value="DNI">DNI</option>
                 <option value="LC">Libreta Cívica</option>
                 <option value="L-enrolamiento">Libreta de enrolamiento</option>
@@ -115,34 +116,30 @@
             </div>
 
             <div class="form-field" id="documento">
-              <label for="ID-number" class="formulario__label">Número:</label>
+              <label for="nrodocumento" class="formulario__label">Número:</label>
               <div class="formulario__grupo-input">
               <input
               class="formulario__input"
                 type="number"
-                name="ID-number"
-                id="ID-number"
+                name="nrodocumento"
+                id="nrodocumento"
                 placeholder="Ejemplo 23466488"
                 required
               />
               <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
               <p class="formulario__input-error">El documento solo puede contener números y el máximo son 8 dígitos.</p>
             </div>
-            <div class="form-field" id="telefono">
-              <label for="phone-number" class="formulario__label">Teléfono de contacto:</label>
-              <div class="formulario__grupo-input">
+
+            <label class="formulario__label">
+              Teléfono de contacto:
               <input
-               class="formulario__input"
-                type="text"
+                class="formulario__input"
+                type="number"
                 name="telefono"
-               
+                id="telefono"
                 placeholder="Ejemplo: 1112345678"
                 required
               />
-              <i class="formulario__validacion-estado fas fa-times-circle"></i></div>
-              <p class="formulario__input-error">El teléfono solo puede contener números y el máximo son 14 dígitos.</p>
-            </div>
-            
       <!--  Estado del alumno  -->
       <div class="form-group mt-2">
         <label for="activo">Activo:</label>
@@ -197,7 +194,7 @@
     </footer>
     <div>
 <!-- <script src="/js/tpo.js"></script> -->
-<script src="/js/alumnosForm.js"></script>
+<!-- <script src="/js/alumnosForm.js"></script> -->
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 <script src="/js/inscripcion.js"></script>
 

@@ -1,6 +1,16 @@
+from flask import Flask, request, jsonify
+
+from flask_cors import CORS
+
 import mysql.connector
 
+from werkzeug.utils import secure_filename
 
+import os
+import time
+
+app = Flask(__name__) #En este name toma el nombre del archivo. (alumnos.py)
+CORS(app)  # Esto habilitará CORS para todas las rutas
 class Alumno:
     def __init__(self, host, user, password, database):
         self.conn = mysql.connector.connect(
@@ -28,25 +38,26 @@ class Alumno:
     # -------------------------------------------------------------------
     # Funcion que añade un alumno
     # -------------------------------------------------------------------
-    def agregar_alumno(self, id, nom, ape, mail,  tipo_documento, nro_documento, telefono, activo=None):
-        self.c.execute(f"SELECT * FROM alumno WHERE idalumno = {id}")
+    def agregar_alumno(self, nom, ape, mail, tipodocumento, nrodocumento, telefono, activo):
+        self.c.execute(f"SELECT * FROM alumno WHERE nombres = '{nom}' AND apellidos = '{ape}' AND mail = '{mail}'")
         existing_student = self.c.fetchone()
         if existing_student:
             return False
-
+        activo = activo if activo is not None else 1
         sql = f"INSERT INTO alumno \
-            (idalumno, nombres, apellidos, mail,  tipodocumento, nrodocumento, telefono, activo) \
+            (nombres, apellidos, mail, tipodocumento, nrodocumento, telefono, activo) \
             VALUES \
-            ({id}, '{nom}', '{ape}', '{mail}', '{tipo_documento}', {nro_documento},  '{telefono}', {activo})"
+            ('{nom}', '{ape}', '{mail}', '{tipodocumento}', {nrodocumento}, '{telefono}', {activo})"
+        print(sql);
         self.c.execute(sql)
         self.conn.commit()
         return True
+   
 
 
-
-#   # -------------------------------------------------------------------
-#     # Funcion que devuelve los datos de un alumno
-#     # -------------------------------------------------------------------    
+  # -------------------------------------------------------------------
+    # Funcion que devuelve los datos de un alumno
+    # -------------------------------------------------------------------    
    
     def consultar_alumno(self, id):
         self.c.execute(f"""
@@ -75,12 +86,12 @@ class Alumno:
 # -------------------------------------------------------------------
     # Modificar alumno
     # -------------------------------------------------------------------
-    def modificar_alumno(self, id, nuevo_nombres, nuevo_apellidos, nuevo_mail,  nuevo_tipo_documento=None, nuevo_nro_documento=None, nuevo_telefono=None, nuevo_activo=None):
+    def modificar_alumno(self, id, nuevo_nombres, nuevo_apellidos, nuevo_mail,  nuevo_tipodocumento=None, nuevo_nrodocumento=None, nuevo_telefono=None, nuevo_activo=None):
         self.c.execute(f"""
             UPDATE alumno
             SET nombres = '{nuevo_nombres}', apellidos = '{nuevo_apellidos}', mail = '{nuevo_mail}',\
-                tipodocumento = '{nuevo_tipo_documento}', \
-                nrodocumento = '{nuevo_nro_documento}',  \
+                tipodocumento = '{nuevo_tipodocumento}', \
+                nrodocumento = '{nuevo_nrodocumento}',  \
                 telefono = '{nuevo_telefono}', activo = '{nuevo_activo}'
             WHERE idalumno = '{id}'
         """)
@@ -110,7 +121,7 @@ class Alumno:
         print(f"  Telefono: {student['telefono']}")
         print(f"      Activo: {student['activo']}")
         print("-" * 50)
-
+     return students
 # # ------------------------------------------------------------------
 #   Funcion eliminar un alumno
 # -------------------------------------------------------------------
@@ -142,15 +153,81 @@ class Alumno:
 
 alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
 # #-------------------------------------------------------------------- 
-alumno.agregar_alumno(2, "Jan", "Porez", "jane@gmail.com",  "DNI", 33678898, "janep",1)
 
-alumno.mostrar_alumno(1)
+@app.route("/students", methods=["GET"])
+def listar_alumno():
+    alum = alumno.listar_alumno()
+    return jsonify(alum)
+
+#--------------------------------------------------------------------
+@app.route("/students/<int:idalumno>", methods=["GET"])
+def mostrar_alumno(idalumno):
+    alum = alumno.consultar_alumno(idalumno)
+    if alum:
+        return jsonify(alum)
+    else:
+        return "Alumno no encontrado", 404
+
+#--------------------------------------------------------------------
+@app.route("/students", methods=["POST"])
+def add_student():
+    try: 
+        nombre = request.form['nombres']
+        apellido = request.form['apellidos'] 
+        mail = request.form.get('mail')
+        tipodocumento = request.form.get('tipodocumento')
+        nrodocumento = request.form ['nrodocumento']
+        telefono = request.form['telefono']       
+        activo = request.form['activo']
+
+        # Suponiendo que 'alumno.agregar_alumno' devuelve True si el alumno se agrega correctamente
+        if alumno.agregar_alumno(nombre, apellido, mail, tipodocumento, nrodocumento, telefono, activo):
+            return jsonify({"mensaje": "Alumno agregado"}), 201
+        else:
+            return jsonify({"mensaje": "El alumno ya existe"}), 400
+
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return 'Internal Server Error', 500
+
+# #--------------------------------------------------------------------
+@app.route("/students/<int:idalumno>", methods=["PUT"])
+def update_student(idalumno):
+    data = request.form
+    nuevo_nombres = data.get('nombres')
+    nuevo_apellidos = data.get('apellidos')
+    nuevo_mail = data.get('mail')    
+    nuevo_tipodocumento = data.get('tipodocumento')
+    nuevo_nrodocumento = data.get('nrodocumento')
+    nuevo_telefono=data.get('telefono')
+    nuevo_activo = data.get('activo')
+
+    if alumno.modificar_alumno(
+        idalumno,
+        nuevo_nombres,
+        nuevo_apellidos,
+        nuevo_mail,
+        nuevo_tipodocumento,
+        nuevo_nrodocumento,
+        nuevo_telefono,
+        nuevo_activo
+    ):
+        return jsonify({"mensaje": "Alumno actualizado"}), 200
+    else:
+        return jsonify({"mensaje": "El alumno no existe"}), 404
+
+#-------------------------------------------------------------------- 
+# #--------------------------------------------------------------------
+if __name__ == "__main__":
+    app.run(debug=True)
+#-------------------------------------------------------------------- 
+#alumno.agregar_alumno( "Luis", "Fort", "luif@gmail.com",  "DNI", 33678898, "23456789",1)
+
+#alumno.mostrar_alumno(1)
 
 #alumno.modificar_alumno(1,"Pedro", "Ortiz", "pedror@gmail.com", "DNI", 18564777, "1154567734", "1")
 
 #alumno.eliminar_alumno(2)
 #alumno.consultar_alumno(1)
 #alumno.listar_alumno()
-
-
 
