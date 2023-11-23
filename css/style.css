@@ -413,6 +413,25 @@ section.idioma-content{
   background-color: #52b788;
 }
 
+/*  ------------CÓDIGO listado alumnos-----------*/
+#listaAlumnos {
+  list-style: none;
+  padding: 0;
+  text-align: left; 
+  max-width: 300px; 
+  margin: 0 auto;
+ 
+}
+
+#listaAlumnos li {
+  margin-bottom: 20px;
+  border: 1px solid black;
+
+  padding: 10px;
+  border-radius: 5px;
+
+  
+}
 
 /*  ------------CÓDIGO breakpoints-----------*/
 

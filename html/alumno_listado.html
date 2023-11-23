@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de inscripción</title>
+    <title>Listado de alumnos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="/css/formulario.css">
+    
   </head>
   <body>
     <div class="container-form">
@@ -49,11 +50,19 @@
         </ul>
       </nav>
 
-    <main class="content">
-      <h1 class="h1-form">Profesores</h1>
 
-     
-    </main>
+    <main class="content grid-container">
+        <h1 class="h1_administracion">Listado de alumnos</h1>
+        <ul id="listaAlumnos"></ul>
+
+        <div class="form-field formulario__grupo-btn-enviar ">
+            <a style="text-decoration: none; color: black;" href="/html/administracion.html">Volver</a> 
+          </div>
+    
+
+       
+      </main>
+
     <footer>
       <div><p> &copy;2023 Free Academy</p></div>
 
@@ -72,8 +81,38 @@
       </div>
     </footer>
     <div>
-<script src="/js/tpo.js"></script>
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script>
+    const URL = "http://127.0.0.1:5000/"
+   
+
+    // Realizamos la solicitud GET al servidor para obtener todos los alumnos
+    fetch(URL + 'students')
+        .then(function (response) {
+            if (response.ok) { return response.json(); }
+        })
+        .then(function (data) {
+            let listaAlumnos = document.getElementById('listaAlumnos');
+
+            // Iteramos sobre los alumnos y agregamos elementos de lista
+            for (let alumno of data) {
+                let elementoLista = document.createElement('li');
+                elementoLista.innerHTML = '<strong>ID Alumno:</strong> ' + alumno.idalumno +
+                    '<br><strong>Nombres:</strong> ' + alumno.nombres +
+                    '<br><strong>Apellidos:</strong> ' + alumno.apellidos +
+                    '<br><strong>Mail:</strong> ' + alumno.mail +
+                    '<br><strong>Tipo Documento:</strong> ' + alumno.tipodocumento +
+                    '<br><strong>Nro Documento:</strong> ' + alumno.nrodocumento +
+                    '<br><strong>Telefono:</strong> ' + alumno.telefono +
+                    '<br><strong>Activo:</strong> ' + alumno.activo;
+                listaAlumnos.appendChild(elementoLista);
+            }
+        })
+        .catch(function (error) {
+            // Código para manejar errores
+            alert('Error al obtener los alumnos.');
+        });
+</script>
   </body>
 </html>

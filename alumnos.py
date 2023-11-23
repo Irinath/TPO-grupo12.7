@@ -217,6 +217,13 @@ def update_student(idalumno):
         return jsonify({"mensaje": "El alumno no existe"}), 404
 
 #-------------------------------------------------------------------- 
+@app.route('/students/<int:idalumno>', methods=['DELETE'])
+def delete_student(idalumno):
+    if alumno.eliminar_alumno(idalumno):
+        return jsonify({"mensaje": "Alumno eliminado correctamente"}), 200
+    else:
+        return jsonify({"mensaje": "No se pudo eliminar al alumno"}), 404
+
 # #--------------------------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
@@ -225,7 +232,7 @@ if __name__ == "__main__":
 
 #alumno.mostrar_alumno(1)
 
-#alumno.modificar_alumno(1,"Pedro", "Ortiz", "pedror@gmail.com", "DNI", 18564777, "1154567734", "1")
+#alumno.modificar_alumno( "Pedro", "Ortiz", "pedror@gmail.com", "DNI", 18564777, "1154567734", "1")
 
 #alumno.eliminar_alumno(2)
 #alumno.consultar_alumno(1)
