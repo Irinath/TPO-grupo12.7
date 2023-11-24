@@ -428,9 +428,19 @@ section.idioma-content{
   border: 1px solid black;
 
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 5px;  
+}
 
-  
+/*------------index administración--------*/
+@media  (max-width: 767px) {
+  .container-admin {
+    grid-template: 0.7fr 0.4fr 3.2fr 0.7fr / 100%; 
+  }
+
+  .form-sesion {
+    max-height: 100vh; 
+    overflow-y: auto; 
+  }
 }
 
 /*  ------------CÓDIGO breakpoints-----------*/

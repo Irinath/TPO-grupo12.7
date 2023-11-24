@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eliminar alumno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@1,300&family=Princess+Sofia&family=Tilt+Prism&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/css/formulario.css">
+  </head>
+  <body>
+    <div class="container-form">
+     <header class="header-container">
+        <div class="logo-header">
+          <img src="/imagenes/logo2.jpg" alt="Logo" />
+        </div>
+
+        <div class="encabezado-centro">
+          <h1 class=" animate__animated  animate__backInRight">Free Academy</h1>
+        </div>
+
+        <div class="container-buttons-header">
+          <a class="button-header" href="/html/inicio-sesion.html">
+            <button>Iniciar sesión</button>
+          </a>
+<!-- 
+          <a
+            class="button-header"
+            href="/html/formulario-inscripcion.html.html"
+          > -->
+          <!-- <a class="button-header" href="https://formsubmit.co/silviagrace15@gmail.com"> -->
+            <button>Registrarse</button>
+          </a> 
+        </div>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/cursos.html">Cursos</a></li>
+          
+        </ul>
+      </nav>
+
+    <main class="content">
+      <h1 class="h1-form">Eliminar alumno</h1>
+
+      <div class="form-container">
+        <div id="app">
+        <ul id="listaAlumnos">
+            <li v-for="alumno in alumnos" :key="alumno.id">
+                <div>ID Alumno: {{ alumno.idalumno }}</div>
+                <div>Nombres: {{ alumno.nombres }}</div>
+                <div>Apellidos: {{ alumno.apellidos }}</div>
+                <div>Email: {{ alumno.mail }}</div>
+                <div>Tipo Documento: {{ alumno.tipodocumento }}</div>
+                <div>Nro Documento: {{ alumno.nrodocumento }}</div>
+                <div>Teléfono: {{ alumno.telefono }}</div>
+                <div>Activo: {{ alumno.activo }}</div>
+                <button @click="eliminarAlumno(alumno.idalumno)">Eliminar</button>
+            </li>
+        </ul>
+    </div>
+       
+      </div>
+      <div class="form-field formulario__grupo-btn-enviar ">
+        <a style="text-decoration: none; color: black;" href="/index.html">Volver</a> 
+      </div>
+    </main>
+    <footer>
+      <div><p> &copy;2023 Free Academy</p></div>
+
+      <div class="footer-icons">
+        <a  href="https://twitter.com/" target="_blank" >
+           <span class="fab fa-twitter" title="Ir a twitter"></span></a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <span class="fab fa-facebook" title="Ir a Facebook"></span></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><span class="fab fa-instagram" title="Ir a Instagram"></span
+        ></a>
+        <a href="https://www.pinterest.com/" target="_blank" 
+          ><span class="fab fa-pinterest" title="Ir a Pinterest"></span
+        ></a>
+       
+      </div>
+    </footer>
+    <div>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+
+        <script>
+            const URL = "http://127.0.0.1:5000/";
+    
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        alumnos: []
+                    };
+                },
+                methods: {
+                    obtenerAlumnos() {
+                        fetch(URL + 'students')
+                            .then(response => {
+                                if (response.ok) { return response.json(); }
+                                throw new Error('Error al obtener la lista de alumnos.');
+                            })
+                            .then(data => {
+                                this.alumnos = data;
+                            })
+                            .catch(error => {
+                                console.error('Error:', error.message);
+                                alert(error.message);
+                            });
+                    },
+                    eliminarAlumno(idalumno) {
+                        if (confirm('¿Estás seguro de que quieres eliminar a este alumno?')) {
+                            fetch(URL + `students/${idalumno}`, { method: 'DELETE' })
+                                .then(response => {
+                                    if (response.ok) {
+                                        this.obtenerAlumnos(); // Actualiza la lista después de eliminar
+                                        alert('Alumno eliminado correctamente.');
+                                    } else {
+                                        alert('No se pudo eliminar al alumno.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error al procesar la solicitud de eliminación:', error.message);
+                                    alert('Error al procesar la solicitud de eliminación.');
+                                });
+                        }
+                    }
+                },
+                mounted() {
+                    this.obtenerAlumnos();
+                }
+            });
+    
+            app.mount('#app');
+        </script>
+<!-- <script src="/js/tpo.js"></script> -->
+<!-- <script src="/js/alumnosForm.js"></script> -->
+
+
+
+  </body>
+</html>
