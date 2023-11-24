@@ -71,7 +71,11 @@
                             <input type="email" id="mail" v-model="nuevo_mail" required><br>
                 
                             <label for="tipodocumento">Tipo de Documento:</label>
-                            <input type="text" id="tipodocumento" v-model="nuevo_tipodocumento"><br>
+                            <select id="tipodocumento" v-model="nuevo_tipodocumento">
+                              <option value="DNI">DNI</option>
+                              <option value="LC">Libreta Cívica</option>
+                              <option value="L-enrolamiento">Libreta de enrolamiento</option>
+                            </select><br>
                 
                             <label for="nrodocumento">Número de Documento:</label>
                             <input type="text" id="nrodocumento" v-model="nuevo_nrodocumento"><br>
