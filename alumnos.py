@@ -151,7 +151,8 @@ class Alumno:
         print("Alumno no encontrado")
 
 
-alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
+#alumno=Alumno( host="localhost", user="root", password="", database="free_academy")
+alumno=Alumno( host="TPpythonG12.mysql.pythonanywhere-services.com", user="TPpythonG12", password="23513PyG12", database="TPpythonG12$free_academy")
 # #-------------------------------------------------------------------- 
 
 @app.route("/students", methods=["GET"])
