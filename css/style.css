@@ -396,6 +396,7 @@ section.idioma-content{
   text-decoration: none;
   color: #000;
   font-size: x-large;
+  display: block;
 }
 
 /*------------opiniones en index --------*/
