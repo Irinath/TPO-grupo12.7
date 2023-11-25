@@ -83,8 +83,12 @@
                             <label for="telefono">Teléfono:</label>
                             <input type="text" id="telefono" v-model="nuevo_telefono"><br>
                 
+                            
                             <label for="activo">Activo:</label>
-                            <input type="text" id="activo" v-model="nuevo_activo"><br>
+                            <select class="form-control" id="activo" v-model="nuevo_activo">
+                              <option value="1">Sí</option>
+                              <option value="0">No</option>
+                            </select><br>
                 
                             <button type="submit">Guardar Cambios</button>
                             
