@@ -153,7 +153,11 @@
                         this.nuevo_activo = data.activo;
                         this.mostrarDatosAlumno = true;
                     })
-                    .catch(error => console.error('Error:', error));
+                    .catch(error => {
+                console.error('Error:', error);
+                alert('El ID proporcionado no obtuvo resultados');
+                this.mostrarDatosAlumno = false;
+            });
             },
             guardarCambios() {
                 const formData = new FormData();
