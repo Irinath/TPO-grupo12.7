@@ -32,8 +32,7 @@ body {
 }
 
 .header-container img {
-  width: 100%;
-  height: auto;
+  max-height: 80;
   width: 253.333px;
   object-fit: none;
 }
