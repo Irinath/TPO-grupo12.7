@@ -10,7 +10,7 @@ body {
   grid-template: repeat(6, auto) / 100%;
   padding: 0 0.8% 0.8%;
   background-color: rgb(216, 243, 220);
-  color: #1b4332;
+  color: #416bb2;
   grid-template-areas:
     "header-container"
     "nav"
@@ -22,8 +22,8 @@ body {
 
 /*  ------------CÓDIGO PARA EL HEADER-----------*/
 .header-container {
-  background-color: #74c69d;
-  color: #fff;
+  background-color: white;
+  color:#416bb2;
   padding: 0.4vw;
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ body {
 /*  ------------CÓDIGO PARA EL NAV-----------*/
 
 nav {
-  background-color: #1b4332;
+  background: linear-gradient(90deg, crimson 0%, #FF72ED 50%, #416bb2 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,10 +71,10 @@ nav ul li a {
 
 nav ul li a:hover, .btn-lang:hover{
   padding: 0.2rem;
-  background-color: #74c69d;
+  background-color:#FF72ED;
   border-radius: 5px;
-  color: #081c15;
-  ;
+  color:white;
+
 }
 
 .container-buttons-header {
@@ -90,10 +90,13 @@ nav ul li a:hover, .btn-lang:hover{
   font-family: Arial, sans-serif;
   font-family: "Bree Serif", serif;
   border-radius: 5px;
+  background-color: #FF72ED;
+  color: white;
+  border: #FF72ED;
 }
 
 .container-buttons-header button:hover, .opiniones:hover, .button-st:hover{
-  background-color: #081c15;
+  background-color: #416bb2;
   color: white;
   border-radius: 5px;
 }
@@ -145,7 +148,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #081c15;
+  background: linear-gradient(90deg, crimson 0%, #FF72ED 50%, #416bb2 100%);
   color: #fff;
   text-align: center;
   padding: 0px 25px;
@@ -165,7 +168,7 @@ footer {
 }
 
 .footer-icons a:hover {
-  color: #74c69d;
+  color: crimson;
 }
 
 
@@ -335,11 +338,12 @@ section.idioma-content{
   padding: 2rem 0;
   text-align: center;
   margin: 0;
-  background-color: #95d5b2;
+  background-color: white;
+  color: #416bb2;
 }
 
 .form-sesion{
-  background-color: #95d5b2;
+  background-color: white;
 }
 
 .container-user, .container-password{
@@ -368,7 +372,6 @@ section.idioma-content{
 
 .container-user #username{
   height: 1.5rem;
- 
 }
 
 .form-sesion, .form-modif{
@@ -383,18 +386,18 @@ section.idioma-content{
 }
 
 .container-admin{
-  border: 0.15rem solid #1b4332;
+  border: 0.15rem solid #416bb2;
   border-radius: 10px;
   padding: 0.4rem;
   width: 35vw; 
   text-align: center;
   margin-bottom: 2%;
-  
+  background-color: #416bb2;
 }
 
 .container-admin a{
   text-decoration: none;
-  color: #000;
+  color: #fcfbfb;
   font-size: x-large;
   display: block;
 }
@@ -499,8 +502,3 @@ section.idioma-content{
 }
 
 }
-
-
-
-
-
