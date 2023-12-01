@@ -34,6 +34,8 @@ body {
 .header-container img {
   width: 100%;
   height: auto;
+  width: 253.333px;
+  object-fit: none;
 }
 
 .encabezado-centro h1 {
@@ -57,11 +59,12 @@ nav ul {
   display: flex;
   justify-content: center;
   margin: 0;
+  padding: 0;
+  gap: 20px;
 }
 
 nav ul li {
   display: inline-block;
-  margin-right: 20px;
 }
 
 nav ul li a {
