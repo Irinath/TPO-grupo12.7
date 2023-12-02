@@ -4,7 +4,7 @@
   margin: 0;
 }
 .content {
-  background-color: #bdf3d5;
+  background-color:white;
 }
 .form-container {
   display: flex;
@@ -52,7 +52,7 @@ label {
 }
 
 .button-form:hover {
-  background-color: #1b4332;
+  background-color: white;
   color: white;
   border-radius: 5px;
 }

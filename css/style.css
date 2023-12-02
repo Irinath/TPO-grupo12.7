@@ -9,7 +9,7 @@ body {
   display: grid;
   grid-template: repeat(6, auto) / 100%;
   padding: 0 0.8% 0.8%;
-  background-color: rgb(216, 243, 220);
+  background-color:white;
   color: #416bb2;
   grid-template-areas:
     "header-container"
@@ -106,25 +106,35 @@ nav ul li a:hover, .btn-lang:hover{
   display: flex;
   padding: 10px;
   grid-area: section1;
-  background-color: #52b788;
+  background-color: white;
+  background-image:url(../imagenes/coffee_nbk.jpg);
+  background-position:20%;
+  background-size: cover;
+  opacity: 0.7; 
 }
 
 .section1 div a, .link {
   text-decoration: none;
-  color: #1b4332;
-  background-color: #74c69d;
-  padding: 2px;
-  border: solid 1px #1b4332;
+  color: crimson;
+  background-color: white;
+  padding: 5px;
+  border: solid 2px crimson;
+  border-radius: 5px;
+}
+
+.section1 h1, .section1 p{
+  color: crimson;
+  font-weight: bold;
 }
 
 .section1 div a:hover, .link:hover {
-  background-color: #1b4332;
+  background-color: crimson;
   color: white;
 }
 
 .section2 {
   grid-area: section2;
-  background-color: #95d5b2;
+  background-color:white;
 }
 
 .section1 h1,
@@ -136,10 +146,18 @@ nav ul li a:hover, .btn-lang:hover{
   text-align: center;
 }
 
+.section2 h1,
+.aside h1, 
+.intro h1,
+.section1-ingles h1
+{
+  color: #416bb2;
+}
+
 .aside {
   grid-area: aside;
-  background-color: #2d6a4f;
-  color: #b7e4c7;
+  background-color: white;
+  color: #416bb2;
   text-align: center;
 }
 
@@ -410,7 +428,10 @@ section.idioma-content{
 
 .opiniones{
   width: 12rem;
-  background-color: #52b788;
+  border: 0.15rem solid #416bb2;
+  background-color: white;
+  color: #416bb2;
+  font-weight: 550;
 }
 /*  ------------CÓDIGO formularios inscripciones-----------*/
 .button-st{
