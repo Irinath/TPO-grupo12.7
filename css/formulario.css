@@ -2,6 +2,7 @@
 .h1-form {
   text-align: center;
   margin: 0;
+  color: #416bb2;
 }
 
 .content{
@@ -28,6 +29,8 @@ fieldset {
   margin-bottom: 0.9%;
   font-size: 1.4rem;
   border-radius: 5px;
+  color: purple;
+  border-color: purple;
 }
 
 .form-field {
@@ -128,6 +131,34 @@ label {
 
 .formulario__mensaje p {
   margin: 0;
+}
+
+.formulario__btn{
+  background-color:white;
+  color: #416bb2;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.formulario__btn:hover {
+  background-color:#416bb2;
+  color: white;
+  border-color: #416bb2;
+  border-radius: 5px;
+}
+
+.formulario__grupo-btn-enviar a{
+  text-decoration: none;
+  color: #416bb2;
+}
+
+.formulario__grupo-btn-enviar a:hover{
+  background-color:#416bb2;
+  color: white;
+  border-color: #416bb2;
+  border-radius: 5px;
 }
 
 .formulario__grupo-btn-enviar {
