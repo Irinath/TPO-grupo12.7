@@ -350,7 +350,7 @@ section.idioma-content{
 }
 
 /*  ------------ CÓDIGO PARA INICIAR SESIÓN, ADMINISTRACIÓN -----------*/
-.h1-form-session, .h1_administracion{
+.h1-form-session, .h1_administracion, .h2-form{
   padding: 2rem 0;
   text-align: center;
   margin: 0;
@@ -360,6 +360,7 @@ section.idioma-content{
 
 .form-sesion{
   background-color: white;
+  
 }
 
 .container-user, .container-password{
@@ -457,11 +458,13 @@ section.idioma-content{
 /*------------index administración--------*/
 @media  (max-width: 767px) {
   .container-admin {
-    grid-template: 0.7fr 0.4fr 3.2fr 0.7fr / 100%; 
+    grid-template-columns: 1fr;
+    max-width: auto;
+    
   }
 
-  .form-sesion {
-    max-height: 100vh; 
+  .form-sesion, .form-modif {
+    min-height: 65vh; 
     overflow-y: auto; 
   }
 }

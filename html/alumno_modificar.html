@@ -59,8 +59,8 @@
             <!-- <a href="administracion.html">Administración</a> -->
           </form>
 
-          <div v-if="mostrarDatosAlumno">
-            <h2>Datos del Alumno</h2>
+          <div  v-if="mostrarDatosAlumno">
+            <h2 class="h2-form">Datos del Alumno</h2>
             <form @submit.prevent="guardarCambios">
               <label for="nombres">Nombres:</label>
               <input type="text" id="nombres" v-model="nuevo_nombres" required><br>
