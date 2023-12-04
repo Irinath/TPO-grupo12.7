@@ -110,9 +110,8 @@ nav ul li a:hover, .btn-lang:hover{
   grid-area: section1;
   background-color: white;
   background-image:url(../imagenes/coffee_nbk.png);
-  background-position:20%;
+  background-position:10%;
   background-size: cover;
-  opacity: 0.7; 
 }
 
 .section1 div a, .link {
@@ -126,7 +125,7 @@ nav ul li a:hover, .btn-lang:hover{
 
 .section1 h1, .section1 p{
   color: crimson;
-  font-weight: bold;
+  text-align: center;
 }
 
 .section1 div a:hover, .link:hover {
@@ -200,7 +199,7 @@ footer {
   align-items: center; 
   flex-direction: column; 
   padding: 10px;
-  background-color: #95d5b2;
+  background-color: white;
 }
 
 .section2-detalle h1 {
@@ -230,11 +229,12 @@ footer {
 
 .informacion-destacada a, .link{
   text-decoration: none;
-  color: #b7e4c7;
+  color: crimson;
+  border-color: white;
 
 }
 .informacion-destacada a:hover, .link:hover{
-  background-color: #1b4332;
+  background-color: crimson;
   color: white;
   padding: 2px;
 }
@@ -247,7 +247,7 @@ footer {
 
 .section2-desarrolloweb {
   display: flex;
-  background-color: #95d5b2; 
+  background-color: white;
   /* padding: 0.5rem;  */
   justify-content: center;
   align-items: center; 
@@ -289,8 +289,7 @@ footer {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between;
-  background-color:#1b4332 ;
- 
+  background-color:#416bb2 ;
 }
 
 .container-lang .ingles,
@@ -307,7 +306,7 @@ footer {
   max-width: 33%; 
   margin:0.2rem; 
   text-align: center;
-  background: linear-gradient(to bottom, #74c69d,#2d6a4f);
+  background: /*linear-gradient(to bottom, #74c69d,#2d6a4f);*/
   color: white;
   padding: 20px;
   /* height: 20rem; */
@@ -318,27 +317,25 @@ footer {
 .container-courses .intro-prog,
 .container-courses .desarrollo,
 .container-courses .course-lang{
-  color: #081c15;
-  background-color:#52b788;
+  color: purple;
+  background-color: white;
 }
-
 
 .btn-lang a{
   text-decoration: none;
-  color: #1b4332;
+  color: #416bb2;
 }
 
 .title{
   text-align: center;
   margin: 0rem;
   padding: 1rem;
-  background: radial-gradient(circle,#74c69d,#1b4332);
+  background-color: white;
+  color: #416bb2;
 }
 
-
- 
 .idioma-content{
-  background-color:#52b788;
+  background-color:white;
   margin: 0;
   
 }
@@ -479,7 +476,7 @@ section.idioma-content{
     padding: 0;
     margin: 0;
     background-color: rgb(216, 243, 220);
-    color: #1b4332;
+    color: #416bb2;
     grid-template-areas:
       "header-container header-container header-container"
       "nav nav nav"
