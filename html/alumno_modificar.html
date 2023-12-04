@@ -1,204 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modificar alumno</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@1,300&family=Princess+Sofia&family=Tilt+Prism&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="/css/formulario.css">
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modificar alumno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@1,300&family=Princess+Sofia&family=Tilt+Prism&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="/css/formulario.css">
+</head>
+
 <body>
-    <div class="container-form">
-        <header class="header-container">
-           <div class="logo-header">
-             <img src="/imagenes/logo2.jpg" alt="Logo" />
-           </div>
-   
-           <div class="encabezado-centro">
-             <h1 class=" animate__animated  animate__backInRight">Free Academy</h1>
-           </div>
-   
-           <div class="container-buttons-header">
-             <a class="button-header" href="/html/inicio-sesion.html">
-               <button>Iniciar sesión</button>
-             </a>
+  <div class="container-form">
+    <header class="header-container">
+      <div class="logo-header">
+        <img src="/imagenes/logo2.jpg" alt="Logo" />
+      </div>
 
-             <button>Registrarse</button>
-            </a> 
+      <div class="encabezado-centro">
+        <h1 class=" animate__animated  animate__backInRight">Free Academy</h1>
+      </div>
+
+      <div class="container-buttons-header">
+        <a class="button-header" href="/html/inicio-sesion.html">
+          <button>Iniciar sesión</button>
+        </a>
+        <a class="button-header" href="https://formsubmit.co/silviagrace15@gmail.com">
+          <button>Registrarse</button>
+        </a>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/html/cursos.html">Cursos</a></li>
+
+      </ul>
+    </nav>
+    <main class="content grid-container ">
+      <h1 class="h1-form">Modificar alumnos</h1>
+
+      <div class="form-modif">
+        <div id="app">
+          <form @submit.prevent="obtenerAlumno">
+            <label for="idalumno">ID del Alumno:</label>
+            <input type="number" v-model.number="idalumno" id="idalumno" required><br>
+            <button type="submit" class="modifica__btn" style="cursor: pointer;">Modificar Alumno</button>
+            <div calss="form_modifica_volverbtn">
+              <a href="/index.html">Volver</a>
+            </div>
+            <!-- <a href="administracion.html">Administración</a> -->
+          </form>
+
+          <div v-if="mostrarDatosAlumno">
+            <h2>Datos del Alumno</h2>
+            <form @submit.prevent="guardarCambios">
+              <label for="nombres">Nombres:</label>
+              <input type="text" id="nombres" v-model="nuevo_nombres" required><br>
+
+              <label for="apellidos">Apellidos:</label>
+              <input type="text" id="apellidos" v-model="nuevo_apellidos" required><br>
+
+              <label for="mail">Correo Electrónico:</label>
+              <input type="email" id="mail" v-model="nuevo_mail" required><br>
+
+              <label for="tipodocumento">Tipo de Documento:</label>
+              <select id="tipodocumento" v-model="nuevo_tipodocumento">
+                <option value="DNI">DNI</option>
+                <option value="LC">Libreta Cívica</option>
+                <option value="L-enrolamiento">Libreta de enrolamiento</option>
+              </select><br>
+
+              <label for="nrodocumento">Número de Documento:</label>
+              <input type="text" id="nrodocumento" v-model="nuevo_nrodocumento"><br>
+
+              <label for="telefono">Teléfono:</label>
+              <input type="text" id="telefono" v-model="nuevo_telefono"><br>
+
+
+              <label for="activo">Activo:</label>
+              <select class="form-control" id="activo" v-model="nuevo_activo">
+                <option value="1">Sí</option>
+                <option value="0">No</option>
+              </select><br>
+
+              <button type="submit">Guardar Cambios</button>
+
+              <button style="text-decoration: none; color: black; margin-left: 10px;"
+                onclick="window.location.href='alumno_modificar.html'">Cancelar</button>
+
+
+
+            </form>
           </div>
-        </header>
-  
-        <nav>
-          <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/html/cursos.html">Cursos</a></li>
-            
-          </ul>
-        </nav>
-        <main class="content grid-container ">
-            <h1 class="h1-form">Modificar alumnos</h1>
-      
-            <div class="form-modif">
-                <div id="app">
-                    <form @submit.prevent="obtenerAlumno">
-                        <label for="idalumno">ID del Alumno:</label>
-                        <input type="number" v-model.number="idalumno" id="idalumno" required><br>
-                        <button type="submit">Modificar Alumno</button> 
-                        <div>
-                        <a style="text-decoration: none; color: black;" href="/index.html">Volver</a>
-                      </div>
-                        <!-- <a href="administracion.html">Administración</a> -->
-                    </form>
-                
-                    <div v-if="mostrarDatosAlumno">
-                        <h2>Datos del Alumno</h2>
-                        <form @submit.prevent="guardarCambios">
-                            <label for="nombres">Nombres:</label>
-                            <input type="text" id="nombres" v-model="nuevo_nombres" required><br>
-                
-                            <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" v-model="nuevo_apellidos" required><br>
-                
-                            <label for="mail">Correo Electrónico:</label>
-                            <input type="email" id="mail" v-model="nuevo_mail" required><br>
-                
-                            <label for="tipodocumento">Tipo de Documento:</label>
-                            <select id="tipodocumento" v-model="nuevo_tipodocumento">
-                              <option value="DNI">DNI</option>
-                              <option value="LC">Libreta Cívica</option>
-                              <option value="L-enrolamiento">Libreta de enrolamiento</option>
-                            </select><br>
-                
-                            <label for="nrodocumento">Número de Documento:</label>
-                            <input type="text" id="nrodocumento" v-model="nuevo_nrodocumento"><br>
-                
-                            <label for="telefono">Teléfono:</label>
-                            <input type="text" id="telefono" v-model="nuevo_telefono"><br>
-                
-                            
-                            <label for="activo">Activo:</label>
-                            <select class="form-control" id="activo" v-model="nuevo_activo">
-                              <option value="1">Sí</option>
-                              <option value="0">No</option>
-                            </select><br>
-                
-                            <button type="submit">Guardar Cambios</button>
-                            
-                            <button style="text-decoration: none; color: black; margin-left: 10px;" onclick="window.location.href='alumno_modificar.html'">Cancelar</button>
-                          
-                            
-                           
-                        </form>
-                    </div>
-                </div>
-                
+        </div>
 
-</main>
-<footer>
-  <div><p> &copy;2023 Free Academy</p></div>
 
-  <div class="footer-icons">
-    <a  href="https://twitter.com/" target="_blank" >
-       <span class="fab fa-twitter" title="Ir a twitter"></span></a>
-    <a href="https://www.facebook.com/" target="_blank">
-      <span class="fab fa-facebook" title="Ir a Facebook"></span></a>
-    <a href="https://www.instagram.com/" target="_blank"
-      ><span class="fab fa-instagram" title="Ir a Instagram"></span
-    ></a>
-    <a href="https://www.pinterest.com/" target="_blank" 
-      ><span class="fab fa-pinterest" title="Ir a Pinterest"></span
-    ></a>
-   
-  </div>
-</footer>
-<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/vue@next"></script>
-<script>
-    // const URL = "http://127.0.0.1:5000/";
-    const URL ="https://tppythong12.pythonanywhere.com/"
+    </main>
+    <footer>
+      <div>
+        <p> &copy;2023 Free Academy</p>
+      </div>
 
-    const app = Vue.createApp({
+      <div class="footer-icons">
+        <a href="https://twitter.com/" target="_blank">
+          <span class="fab fa-twitter" title="Ir a twitter"></span></a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <span class="fab fa-facebook" title="Ir a Facebook"></span></a>
+        <a href="https://www.instagram.com/" target="_blank"><span class="fab fa-instagram"
+            title="Ir a Instagram"></span></a>
+        <a href="https://www.pinterest.com/" target="_blank"><span class="fab fa-pinterest"
+            title="Ir a Pinterest"></span></a>
+
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      // const URL = "http://127.0.0.1:5000/";
+      const URL = "https://tppythong12.pythonanywhere.com/"
+
+      const app = Vue.createApp({
         data() {
-            return {
-                idalumno: '',
-                nuevo_nombres: '',
-                nuevo_apellidos: '',
-                nuevo_mail: '',
-                nuevo_tipodocumento: '',
-                nuevo_nrodocumento: '',
-                nuevo_telefono: '',
-                nuevo_activo: '',
-                mostrarDatosAlumno: false,
-            };
+          return {
+            idalumno: '',
+            nuevo_nombres: '',
+            nuevo_apellidos: '',
+            nuevo_mail: '',
+            nuevo_tipodocumento: '',
+            nuevo_nrodocumento: '',
+            nuevo_telefono: '',
+            nuevo_activo: '',
+            mostrarDatosAlumno: false,
+          };
         },
         methods: {
-            obtenerAlumno() {
-                fetch(URL + 'students/' + this.idalumno)
-                    .then(response => response.json())
-                    .then(data => {
-                        this.nuevo_nombres = data.nombres;
-                        this.nuevo_apellidos = data.apellidos;
-                        this.nuevo_mail = data.mail;
-                        this.nuevo_tipodocumento = data.tipodocumento;
-                        this.nuevo_nrodocumento = data.nrodocumento;
-                        this.nuevo_telefono = data.telefono;
-                        this.nuevo_activo = data.activo;
-                        this.mostrarDatosAlumno = true;
-                    })
-                    .catch(error => {
+          obtenerAlumno() {
+            fetch(URL + 'students/' + this.idalumno)
+              .then(response => response.json())
+              .then(data => {
+                this.nuevo_nombres = data.nombres;
+                this.nuevo_apellidos = data.apellidos;
+                this.nuevo_mail = data.mail;
+                this.nuevo_tipodocumento = data.tipodocumento;
+                this.nuevo_nrodocumento = data.nrodocumento;
+                this.nuevo_telefono = data.telefono;
+                this.nuevo_activo = data.activo;
+                this.mostrarDatosAlumno = true;
+              })
+              .catch(error => {
                 console.error('Error:', error);
                 alert('El ID proporcionado no obtuvo resultados');
                 this.mostrarDatosAlumno = false;
-            });
-            },
-            guardarCambios() {
-                const formData = new FormData();
-                formData.append('nombres', this.nuevo_nombres);
-                formData.append('apellidos', this.nuevo_apellidos);
-                formData.append('mail', this.nuevo_mail);
-                formData.append('tipodocumento', this.nuevo_tipodocumento);
-                formData.append('nrodocumento', this.nuevo_nrodocumento);
-                formData.append('telefono', this.nuevo_telefono);
-                formData.append('activo', this.nuevo_activo);
+              });
+          },
+          guardarCambios() {
+            const formData = new FormData();
+            formData.append('nombres', this.nuevo_nombres);
+            formData.append('apellidos', this.nuevo_apellidos);
+            formData.append('mail', this.nuevo_mail);
+            formData.append('tipodocumento', this.nuevo_tipodocumento);
+            formData.append('nrodocumento', this.nuevo_nrodocumento);
+            formData.append('telefono', this.nuevo_telefono);
+            formData.append('activo', this.nuevo_activo);
 
-                fetch(URL + 'students/' + this.idalumno, {
-                    method: 'PUT',
-                    body: formData,
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert('Alumno actualizado correctamente');
-                        this.limpiarFormulario();
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Error al actualizar el alumno');
-                    });
-            },
-            limpiarFormulario() {
-                this.idalumno = '';
-                this.nuevo_nombres = '';
-                this.nuevo_apellidos = '';
-                this.nuevo_mail = '';
-                this.nuevo_tipodocumento = '';
-                this.nuevo_nrodocumento = '';
-                this.nuevo_telefono = '';
-                this.nuevo_activo = '';
-                this.mostrarDatosAlumno = false;
-            }
+            fetch(URL + 'students/' + this.idalumno, {
+              method: 'PUT',
+              body: formData,
+            })
+              .then(response => response.json())
+              .then(data => {
+                alert('Alumno actualizado correctamente');
+                this.limpiarFormulario();
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                alert('Error al actualizar el alumno');
+              });
+          },
+          limpiarFormulario() {
+            this.idalumno = '';
+            this.nuevo_nombres = '';
+            this.nuevo_apellidos = '';
+            this.nuevo_mail = '';
+            this.nuevo_tipodocumento = '';
+            this.nuevo_nrodocumento = '';
+            this.nuevo_telefono = '';
+            this.nuevo_activo = '';
+            this.mostrarDatosAlumno = false;
+          }
         }
-    });
+      });
 
-    app.mount('#app');
-</script>
+      app.mount('#app');
+    </script>
 
 </body>
+
 </html>

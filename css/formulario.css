@@ -40,6 +40,7 @@ fieldset {
 label {
   margin-bottom: 0.3%;
   font-size: 1.2rem;
+  color: purple;
 }
 
 .form-field input,
@@ -60,7 +61,6 @@ label {
 }
 
 .button-form:hover {
-  background-color: white;
   color: #416bb2;
   border-radius: 5px;
 }
@@ -183,6 +183,26 @@ label {
   margin-left: 10px; 
 }
 
+.modifica__btn{
+  background-color:white;
+  color: #416bb2;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.modifica__btn:hover {
+  background-color:#416bb2;
+  color: white;
+  border-color: #416bb2;
+  border-radius: 5px;
+}
+
+.form_modifica_volverbtn{
+  text-decoration: none;
+  color: #416bb2;
+}
 /*Formulario alumnos*/
 
 #cursoProgramacion,
